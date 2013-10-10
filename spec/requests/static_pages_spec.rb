@@ -14,12 +14,12 @@ require 'spec_helper'
 describe "Static pages" do
     describe "Home page" do
         it "should have the content 'Forget Password'" do
-            visit '/static_pages/home'
+            visit root_path
             expect(page).to have_content('Forget Password')
         end
         
         it "should have the title 'Home'" do
-            visit '/static_pages/home'
+            visit root_path
             expect(page).to have_title('Commonwealth Secondary School | Home')
         end
         
@@ -27,24 +27,24 @@ describe "Static pages" do
     
     describe "FAQ" do
         it "should have the content 'FAQ'" do
-            visit '/static_pages/help'
+            visit faq_path
             expect(page).to have_content('FAQ')
         end
         
         it "should have the title 'FAQ'" do
-            visit '/static_pages/help'
+            visit faq_path
             expect(page).to have_title('Commonwealth Secondary School | FAQ')
         end
     end
     
     describe "Feedback" do
         it "should have the content 'Feedback'" do
-            visit '/static_pages/feedback'
+            visit feedback_path
             expect(page).to have_content('Feedback')
         end
         
         it "should have the title 'Feedback'" do
-            visit '/static_pages/feedback'
+            visit feedback_path
             expect(page).to have_title('Commonwealth Secondary School | Feedback')
         end
     end
