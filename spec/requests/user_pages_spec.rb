@@ -15,12 +15,12 @@ require 'spec_helper'
 describe "User pages" do
     describe "Sign In Page" do
         it "should have the content 'Sign In'" do
-            visit signin_path
+            visit new_path
             expect(page).to have_content('Sign In')
         end
         
         it "should have the title 'Sign In'" do
-            visit signin_path
+            visit new_path
             expect(page).to have_title('Commonwealth Secondary School | Sign In')
         end
         
