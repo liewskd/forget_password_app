@@ -1,0 +1,32 @@
+<% provide(:title, @user.name) %>
+<h1>Welcome <%= @user.name %>!</h1>
+
+<p>
+Currently, you have the following account. You may request for an account or password reset here. 
+</p>
+
+<table>
+    <tr>
+    <td> Google Account </td>
+    <td> <%= @user.google %> </td>
+    <td> <%=link_to "Reset Password", '#', class:"btn btn-small btn-primary" %></td>
+    </tr>
+    
+    <tr>
+    <td> SSOE Account </td>
+    <td> <%= @user.google %> </td>
+    <td> <%=link_to "Reset Password", '#', class:"btn btn-small btn-primary" %></td>
+    </tr>
+    
+    <tr>
+    <td> Ask N Learn Account </td>
+    <td> <%= @user.google %> </td>
+    <td> <%=link_to "Request", '#', class:"btn btn-small btn-primary" %></td>
+    </tr>
+    
+    <tr>
+    <td> iMTL Account </td>
+    <td> <%= @user.google %> </td>
+    <td> <%=link_to "Request", '#', class:"btn btn-small btn-primary" %></td>
+    </tr>
+</table>

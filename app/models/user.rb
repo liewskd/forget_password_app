@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     validates :email, presence: true, format: {with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false }
     validates :NRIC, presence: true
     validates_length_of :NRIC, :minimum => 9, :maximum => 9, :allow_blank => false
+
     
     
     has_secure_password

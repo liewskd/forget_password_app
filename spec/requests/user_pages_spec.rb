@@ -13,16 +13,23 @@ require 'spec_helper'
 
 
 describe "User pages" do
-    describe "Sign In Page" do
-        it "should have the content 'Sign In'" do
-            visit new_path
-            expect(page).to have_content('Sign In')
-        end
+    
+    subject { page }
+    
+   
+    
+    describe "Sign Up Page" do
+        before {visit signup_path}
+        it { should have_content 'Sign Up'}
+        it { should have_title 'Sign Up'}
         
-        it "should have the title 'Sign In'" do
-            visit new_path
-            expect(page).to have_title('Commonwealth Secondary School | Sign In')
-        end
+    end
+    
+    describe "profile page" do
+        let(:user){ FactoryGirl.create(:user) }
+        before { visit user_path(user) }
         
+        it {should have_content(user.name) }
+        it {should have_title(user.name) }
     end
 end
