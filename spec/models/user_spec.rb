@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
     #pending "add some examples to (or delete) #{__FILE__}"
     before do
-        @user = User.new(name: "Example User", email: "user@example.com", password: "foobarsz", password_confirmation: "foobarsz")
+        @user = User.new(name: "Example User", email: "user@example.com", password: "foobarsz", password_confirmation: "foobarsz", NRIC: "S0000000Z")
     end
     
     
@@ -11,6 +11,7 @@ describe User do
     
     it { should respond_to(:name) }
     it { should respond_to(:email) }
+    it { should respond_to(:NRIC) }
     it { should respond_to(:password_digest) }
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }
@@ -99,7 +100,12 @@ describe User do
         end
     end
     
+    describe "when NRIC is too short" do
+        before { @user.NRIC = "a" * 8}
+        it {should_not be_valid}
+    end
     
+   
             
         
     
